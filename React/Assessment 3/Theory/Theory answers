@@ -1,0 +1,35 @@
+Question 1 - Explain the concept of React components. How do they contribute to building user
+interfaces in React?
+Answer - React components are self-contained pieces of code that represents a specific type of the user interface. React components form the building blocks of React applications that allows you to join markup languages such as HTML, Javascript and CSS within them.
+The React components are written and displayed as JavaScript functions. When a component is created, the first step is defining a function and that describes the component name. Functional components are a type of component in React, that is displayed as JavaScript functions. This is because they provide a much simpler and more concise approach to writing the components in comparison to class components.
+
+Question 2 - What is JSX in React? Provide an example of JSX code and explain how it's transformed into JavaScript.
+Answer - JSX in React stands for JavaScript syntax extension. JSX is a JavaScript Extension Syntax that is used in React to be able to write HTML and JavaScript together easily. JSX converts HTML tags into react elements.
+Example:
+This code ->
+
+<h1 id="jsx">This is a JSX Example</h1>   
+Would be converted to this ->
+React.createElement("h1", { id: "jsx" }, "This is a JSX Example");
+
+Question 3 - Briefly describe the virtual DOM in React. How does it contribute to improving performance in web applications?
+Answer - DOM stands for “Document Object Model”. The DOM represents the UI of your application. This means that everytime there is a change in the state of the application UI, the DOM gets updated to represent that change. However, because of this, there is a frequent manipulation and it affects the DOMs performance, resulting in it becoming slow.
+So to contribute ti improving performance in web applications, there is the Virtual DOM that comes in. The virtual DOM performs significantly faster and more efficiently than the real DOM. The virtual DOM is only a virtual representation of the DOM. Everytime the state of our application changes, the virtual DOM gets updated instead of the real DOM.
+So when new elements are added and created to the UI, a virtual DOM, which can be presented as a tree is then created. If the state of any of these elements changes, a new virtual DOM tree is created. This tree is then compared with the previous virtual DOM tree.
+Once this is done, the virtual DOM will then calculate the best possible method to make these changes to the real DOM. The result of this is that it ensures that there are minimal operations on the real DOM. Therefore, reducing the performance cost of updating the real DOM.
+
+Question 4 - List and explain three main phases of a React component's lifecycle. Provide an example of a situation where each phase might be useful.
+Answer - There are three main phases of a React component's lifecycle. Each phase has a set of lifecycle methods that are called at specific points in the component's lifecycle. These methods permit you to control the component's performance and behavior and enabling you to perform specific actions at different stages of its lifecycle.
+The first Phase is the Mounting Phase, the second is the Updating Phase, and the third, is the Unmounting Phase.
+The Mounting Phase begins when a component is first created and inserted into the DOM. The Updating Phase occurs when a component's state or props change. And the Unmounting Phase occurs when a component is removed from the DOM.
+
+Question 5 - Discuss the difference between props and state in React. In what scenarios would you use props, and in what scenarios would you use state?
+Answer - Props is short for properties, and are a way of passing data from parent components to child components. They are read-only and help components receive values from their parents.
+In React, once props are set by the parent component, they cannot be altered, modified or changed by the child component, they are immutable. This ensures a predictable behaviour of components.
+A State is a built-in object in a React component where you can store property values that belong to that component. It is primarily used to store the local state of a component.
+However, unlike props, state is mutable. This means that it can be changed, altered or modified, and when it does change, the component re-renders to reflect those changes. State is used when a component has data that may change over time and should cause a re-render when it does. For example, if you're building a counter application, the counter's value would be stored in the state, and it would change each time the user clicks a button.
+
+Question 6 - Explain the significance of the shouldComponentUpdate method in the component
+lifecycle. How does it impact the rendering of components?
+Answer - The shouldComponentUpdate is a lifecycle method in React. The shouldComponentUpdate is invoked before rendering an already mounted component when new props or states are being received.
+This method makes the component re-render only when there is a change in the state or props of a component and that change will affect the output.
